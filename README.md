@@ -15,7 +15,7 @@ Installation
 
 For now, WorLd is a very tiny curses application, so its only dependency is `ncurses`.
 
-Juste type then `make` to build and run the game ! 
+Then, juste type `make` to build and run the game ! 
 
 
 
