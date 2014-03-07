@@ -6,22 +6,32 @@ Sym::Sym() {
 }
 
 Sym::Sym(bool isWorld) {
+	std::stringstream ss;
+	ss << "Symbole : ";
+	
 	if (isWorld) {
 		int j, maxj = rand() % 5 + 1;
 		switch (rand() % 10) {
 			case 0:
 				for (j = 0 ; j < maxj ; j++)
 					push(0, -j, 'T');
+				ss << "[Type T" << maxj << "]";
 				break;
 			case 1:
 				push(0, 0, 'H');
+				ss << "[Type H" << maxj << "]";
 				break;
 			case 2:
 				for (j = 0 ; j < maxj ; j++)
 					push(0, -j, 'C');
+				ss << "[Type C" << maxj << "]";
 				break;
+			default:
+				ss << "-- vide --";
 		}
 	}
+	
+	m_description = ss.str();
 }
 
 Sym::Sym(chtype ch) {
@@ -52,6 +62,10 @@ void Sym::push(int x, int y, chtype ch) {
 
 void Sym::pop() {
 	m_data.pop_back();
+}
+
+const char *Sym::read_description() {
+	return (char*)m_description.c_str();
 }
 
 

@@ -29,13 +29,13 @@ class Ui {
 		void wrender(WINDOW *win);
 		void render();
 		void move(int l);
+		void move_cursor(int l);
 		void pushView(Word* w, int pos);
 	
 	private:
 		std::vector<WordView> m_words;
-		int m_pos;
+		int m_pos, m_pos_cursor;
 		int m_w, m_h;
-		
 };
 
 

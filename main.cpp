@@ -24,7 +24,6 @@ int main(int argc, char **arv) {
 				run = false;
 				break;
 			
-			case KEY_RIGHT:
 			case 'k':
 				disp.move(1);
 				disp.render();
@@ -35,7 +34,6 @@ int main(int argc, char **arv) {
 				disp.render();
 				break;
 			
-			case KEY_LEFT:
 			case 'j':
 				disp.move(-1);
 				disp.render();
@@ -43,6 +41,17 @@ int main(int argc, char **arv) {
 			
 			case 'h':
 				disp.move(-5);
+				disp.render();
+				break;
+			
+			case KEY_RIGHT:
+				disp.move_cursor(1);
+				disp.render();
+				break;
+
+			
+			case KEY_LEFT:
+				disp.move_cursor(-1);
 				disp.render();
 				break;
 			
